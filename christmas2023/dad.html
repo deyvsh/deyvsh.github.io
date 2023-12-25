@@ -8,6 +8,8 @@
             margin: 0;
             padding: 0;
         }
+
+
         body {
             background: url(bg.jpg);
             background-size: cover;
@@ -15,11 +17,45 @@
             background-position: center center;
         }
 
+        #werdz {
+            position: absolute;
+            height:15%;
+            top: 30%;
+            left:30%;
+            width: 60%;
+            background-size:20%,20%;
+            color: white;
+            font-family: Segoe UI, sans-serif;
+            font-size: 48px;
+            line-height: 1.6;
+
+            p {
+                font-size: 24px;
+            }
+
+            ul {
+                font-size: 20px;
+                padding-left: 30px;
+
+                a {
+                    color: white;
+                }
+            }
+        }
     </style>
 </head>
 <body>
 
-<canvas id="snowField"></canvas>
+<canvas id="snowField">Your browser does not support the HTML 5 Canvas.</canvas>
+<div id="werdz">
+    Merry Christmas Dad and Jill!
+    <p>You won't believe this one weird thing Robert Oppenheimer did in 1953...</p>
+    <ul>
+        <li>Introductory "Reith Revisited" <a href="https://www.bbc.co.uk/programmes/b096g1b7">podcast episode;</a></li>
+        <li><a href="https://www.bbc.co.uk/radio4/features/the-reith-lectures/transcripts/1948/#y1953">Transcripts</a> of all the lectures;</li>
+        <li><a href="https://www.bbc.co.uk/programmes/p00h9lm8">Recording</a> of the sixth and final lecture (others seem to be unavailable).</li>
+    </ul>
+</div>
 
 <script>
 var canvas = document.querySelector('#snowField');
@@ -71,9 +107,10 @@ function draw() {
     ctx.drawImage(imgTree, 0, canvas.height - imgTree.height / 4 + 50, 500, 550);
     ctx.drawImage(imgLight, canvas.width - imgLight.width/3, 0, imgLight.width/4, imgLight.height/4);
     // ctx.fontFamily = 'Segoe UI, sans-serif';
-    ctx.font = '48px Segoe UI, sans-serif';
-    ctx.fillText('Merry Christmas Dad and Jill', 500, 350);
-    ctx.fillText('You won/'t believe this one weird thing Robert Oppehneimer did next...', 500, 450);
+    // ctx.font = '48px Segoe UI, sans-serif';
+    // ctx.fillText('Merry Christmas Dad and Jill', 500, 350);
+    // ctx.font = '24px Segoe UI, sans-serif';
+    // ctx.fillText('You won\'t believe the one weird thing Robert Oppenheimer did next...', 500, 400);
     for(var i = 0; i < snows.length; i++) {
         snows[i].update();
     }
